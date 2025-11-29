@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 // request comes in, at most once every 1 hour.
 export const revalidate = 3600;
 
-
 export async function generateStaticParams() {
   const posts = await fetchPosts();
   return posts.map((post) => ({
