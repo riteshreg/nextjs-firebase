@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,6 +20,23 @@ export default function Home() {
           <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Done by Retech Labs.
           </p>
+          <div className="mt-4 flex w-full flex-col gap-3 text-base sm:text-left">
+            <p className="text-zinc-700 dark:text-zinc-300">Demo pages:</p>
+            <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
+              <Link href="/isr" className="rounded-lg border border-black/10 p-4 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/5">
+                /isr
+              </Link>
+              <Link href="/client-side-fetching" className="rounded-lg border border-black/10 p-4 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/5">
+                /client-side-fetching
+              </Link>
+              <Link href="/server-action-demo" className="rounded-lg border border-black/10 p-4 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/5">
+                /server-action-demo
+              </Link>
+              <Link href="/server-fetching" className="rounded-lg border border-black/10 p-4 hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/5">
+                /server-fetching
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
     </div>
