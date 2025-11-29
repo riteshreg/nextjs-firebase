@@ -1,11 +1,11 @@
-interface Post {
+export interface Post {
   userId: string;
   id: string;
   title: string;
   body: string;
 }
 
-async function getPosts() {
+export async function getPosts() {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
 
   if (res.ok === false) {
@@ -24,7 +24,7 @@ async function getPosts() {
   };
 }
 
-async function fetchPosts(): Promise<Post[]> {
+export async function fetchPosts(): Promise<Post[]> {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
   });
@@ -36,7 +36,7 @@ async function fetchPosts(): Promise<Post[]> {
   return res.json();
 }
 
-async function findPostById(id: string): Promise<Post | null> {
+export async function findPostById(id: string): Promise<Post | null> {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
 
   if (!res.ok) {
@@ -45,6 +45,3 @@ async function findPostById(id: string): Promise<Post | null> {
 
   return res.json();
 }
-
-export type { Post };
-export { getPosts, fetchPosts, findPostById };

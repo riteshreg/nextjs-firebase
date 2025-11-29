@@ -2,7 +2,8 @@ import Link from "next/link";
 import { fetchPosts, Post } from "@/actions/post";
 
 // ISR: Regenerate this page at most once every hour
-export const revalidate = 60 * 60;
+export const revalidate = 3600;
+
 
 export default async function ServerSideFetching() {
   let posts: Post[] = [];
